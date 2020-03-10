@@ -61,6 +61,14 @@ except ImportError:
                   'qiskit-ibmq-provider package. Install qiskit-ibmq-provider '
                   'or check your installation.',
                   RuntimeWarning)
+# Try to import the Honeywell provider if installed.
+try:
+    from qiskit.providers.honeywell import Honeywell
+except ImportError:
+    warnings.warn('Could not import the Honeywell provider from the '
+                  'qiskit-honeywell-provider package. Install qiskit-honeywell-provider '
+                  'or check your installation.',
+                  RuntimeWarning)
 
 # Moved to after IBMQ and Aer imports due to import issues
 # with other modules that check for IBMQ (tools)
